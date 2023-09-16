@@ -3,8 +3,13 @@ from bs4 import BeautifulSoup
 import urllib.parse
 import urllib.request
 import ssl
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app, resources={
+    r"/search": {"origins": "https://alltherecipegrabber.onrender.com/"},
+    r"/details/*": {"origins": "https://alltherecipegrabber.onrender.com/"}
+})
 
 class AllRecipes(object):
 
