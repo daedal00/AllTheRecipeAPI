@@ -6,7 +6,7 @@ import ssl
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "https://alltherecipegrabber.onrender.com/"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 class AllRecipes(object):
